@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-<link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
+
 <body>
+    <main class="container mx-auto">
+        <section class="w-96 lg:w-[1300px] text-center  my-20">
+            <div>
+                <input id="input-text" type="text" placeholder="Type here"
+                    class="input input-bordered w-full max-w-xs" />
+                <button onclick="serchHandle()" class="btn btn-secondary">Search</button>
+            </div>
+        </section>
+        <section id="loading" class="text-center hidden">
+            <span class="loading loading-spinner loading-lg"></span>
+        </section>
+        <section>
+            <div id="phone-cards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- <div class="card w-96 bg-base-100 shadow-xl">
+                    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                    <div class="card-body">
+                      <h2 class="card-title">Shoes!</h2>
+                      <p>If a dog chews shoes whose shoes does he choose?</p>
+                      <div class="card-actions justify-end">
+                        <button class="btn btn-primary">Buy Now</button>
+                      </div>
+                    </div>
+                  </div> -->
+            </div>
+            <div id="show-all" class="hidden text-center my-20">
+                <button onclick="showingAll()" class="btn btn-secondary">show all</button>
+            </div>
+        </section>
+        <section id="model">
+            <!-- Open the modal using ID.showModal() method -->
+            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                    <div id="show-phone-details">
+
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+        </section>
+    </main>
     <script src="js/phn.js"></script>
 </body>
+
 </html>
